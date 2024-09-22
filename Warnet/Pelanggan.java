@@ -33,11 +33,12 @@ public class Pelanggan {
         return NoTelp;
     }
 
-    public void tambahBilling(LocalDate Waktu, Operator Konter, Operator ShiftKonter) {
+    public void tambahBilling(LocalDate Waktu, Operator Konter, Operator ShiftKonter, String IDKomputer) {
         Pesanan Pesanan = new Pesanan();
         Pesanan.setWaktu(Waktu);
         Pesanan.setShift(ShiftKonter);
         Pesanan.setKonter(Konter);
+        Pesanan.setIDKomputer(IDKomputer);
         RiwayatPesanan.add(Pesanan);
 
     }
@@ -55,7 +56,6 @@ public class Pelanggan {
         info += "Nama Pelanggan :" + this.NamaPelanggan + "\n";
         info += "No Pelanggan   :" + this.NoPelanggan + "\n";
         info += "NoTelefon      :" + this.NoTelp + "\n";
-
         if (!RiwayatPesanan.isEmpty()) {
             info += "Riwayat Billing : \n";
 
